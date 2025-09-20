@@ -54,7 +54,7 @@ const Home = () => {
     return (
         <main className='p-6 bg-gradient-to-br from-indigo-50 to-purple-50 min-h-screen'>
             <div className="flex justify-between items-center mb-6">
-                <h1 className="text-2xl font-bold gradient-text">AI</h1>
+                <h1 className="text-2xl font-bold gradient-text">AiChat</h1>
                 <div className="flex gap-3">
                     <button 
                         onClick={() => {
