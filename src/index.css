@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Typing dots animation */
+.typing-dots {
+  display: flex;
+  align-items: center;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  margin: 0 3px;
+  background-color: #504e4e;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.dot1 {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.dot2 {
+  animation: pulse 1.5s infinite ease-in-out 0.3s;
+}
+
+.dot3 {
+  animation: pulse 1.5s infinite ease-in-out 0.6s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary: #ec4899;
+  --accent: #8b5cf6;
+  --success: #10b981;
+  --warning: #f5f50b;
+  --danger: #ef4444;
+  --background: #000000;
+  --card: #ffffff;
+  --text: #1e293b;
+  --text-light: #64748b;
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.message-box{
+  scroll-behavior: smooth;
+}
+.message-box::-webkit-scrollbar{
+  display: none;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded-md shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+}
+
+.btn-secondary {
+  @apply bg-pink-500 hover:bg-pink-600 text-white font-medium rounded-md shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md hover:shadow-lg p-4 border-l-4 border-indigo-500;
+}
+
+.gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white;
+}
