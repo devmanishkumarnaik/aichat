@@ -62,13 +62,13 @@ const Project = () => {
     const [ showMobileFileCard, setShowMobileFileCard ] = useState(false)
     const [ showMobileExplorer, setShowMobileExplorer ] = useState(false)
     
-    const refreshCollaborators = () => {
-        axios.get(`/projects/get-project/${project._id}`).then(res => {
-            setProject(res.data.project);
-        }).catch(err => {
-            console.error("Error refreshing collaborators:", err);
-        });
-    }
+    // const refreshCollaborators = () => {
+    //     axios.get(`/projects/get-project/${project._id}`).then(res => {
+    //         setProject(res.data.project);
+    //     }).catch(err => {
+    //         console.error("Error refreshing collaborators:", err);
+    //     });
+    // }
     
     // Auto-show file explorer on mobile/tablet when files are available
     useEffect(() => {
@@ -374,7 +374,7 @@ const Project = () => {
                         }} className='p-2 mr-2 bg-red-100 hover:bg-red-200 text-red-700 rounded-full transition-all' title="Reset conversation">
                             <i className="ri-delete-bin-line"></i>
                         </button>
-                        <button onClick={refreshCollaborators} className='p-2 mr-2 bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-full transition-all' title="Refresh collaborators">
+                        <button onClick={()=>window.location.reload()} className='p-2 mr-2 bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-full transition-all' title="Refresh collaborators">
                             <i className="ri-refresh-line"></i>
                         </button>
                         <button onClick={() => setIsSidePanelOpen(!isSidePanelOpen)} className='p-2 bg-indigo-100 hover:bg-indigo-200 text-indigo-700 rounded-full transition-all'>
