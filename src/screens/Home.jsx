@@ -43,14 +43,6 @@ const Home = () => {
 
     }, [])
 
-    const refreshProjects = () => {
-        axios.get('/projects/all').then((res) => {
-            setProject(res.data.projects)
-        }).catch(err => {
-            console.log(err)
-        })
-    }
-
     return (
         <main className='p-6 bg-gradient-to-br from-indigo-50 to-purple-50 min-h-screen'>
             <div className="flex justify-between items-center mb-6">
@@ -67,12 +59,12 @@ const Home = () => {
                         Logout
                     </button>
                     <button 
-                        onClick={() => refreshProjects()}
-                        className="btn-primary px-4 py-2 flex items-center"
-                    >
-                        <i className="ri-refresh-line mr-2"></i>
-                        Refresh
-                    </button>
+  onClick={() => window.location.reload()} 
+  className="btn-primary px-4 py-2 flex items-center"
+>
+  <i className="ri-refresh-line mr-2"></i>
+  Refresh
+</button>
                 </div>
             </div>
             <div className="projects grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
